@@ -65,3 +65,12 @@ The skill is built with the Microsoft Connect review structure in mind and check
 ## Contributing
 
 To improve this skill, edit `skills/connect-reflect/SKILL.md` and submit a PR.
+
+## Multi-machine support
+
+Many people work across multiple machines. This skill handles that:
+
+- **Git history** is mined via GitHub API (`gh` CLI), not local clones. Works from any machine without needing your repos checked out locally.
+- **Amplifier sessions** are mined if they exist on this machine. If you work across multiple machines and sessions are elsewhere, the guided reflection step covers the gap. You know what you worked on.
+- **Meeting transcripts** can come from local files or M365 APIs.
+- **The guided reflection is the safety net.** Even if all your evidence is on other machines, the conversation in Step 4 captures what the mining missed. That's by design.

@@ -120,20 +120,35 @@ signal. The meta-work (meetings, conversations, teaching, mentoring,
 thinking) is often where the real impact lives, especially for non-engineering
 roles like design architects.
 
+This step is designed to work from any machine. Git history is mined
+via GitHub API (no local clones needed). Amplifier sessions and local
+files are mined if they exist on this machine. If the user works across
+multiple machines, the guided reflection in Step 4 fills the gaps —
+they know what they worked on even if the evidence is on another machine.
+
 Dispatch agents in parallel, one per source:
 
 **3a. Git history**
-- Scan all projects in the user's workspace (ask for the path if not obvious)
-- `git log --oneline --since=<start> --until=<end>` for each repo
-- Verify authorship on every repo
-- Cluster repos by theme
+- Primary: Use `gh` CLI to list the user's GitHub repos and mine
+  commit history remotely. This works from ANY machine without
+  needing local clones: `gh repo list <user> --json name,pushedAt`
+  then `gh api repos/<owner>/<repo>/commits?since=<start>&until=<end>`
+- Bonus: If local clones exist, scan the workspace for richer detail
+  (diffs, file changes, branch history). Ask the user for their
+  workspace path.
+- For org repos the user contributed to (like microsoft/*), ask
+  which orgs to scan.
+- Verify authorship on every repo using commit author data.
+- Cluster repos by theme.
 - Execution: Delegate to self or foundation:explorer, one per cluster
 
 **3b. Amplifier sessions**
-- Find session directories across all projects
-  (`~/.amplifier/projects/` has per-project session stores)
-- Extract session metadata: topics, dates, what was worked on
-- Group by month and project
+- Check if `~/.amplifier/projects/` exists on this machine. If yes,
+  mine session metadata: topics, dates, what was worked on.
+- If sessions aren't on this machine (multi-machine setup), note
+  the gap. The reflection step will cover it — the user knows what
+  they worked on.
+- Group by project and time period.
 - Execution: Delegate to foundation:session-analyst
 
 **3c. Meeting transcripts**

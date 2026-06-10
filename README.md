@@ -1,52 +1,61 @@
-# Amplifier Skills Team
+# connect-reflect
 
-Shared Amplifier skills for the team.
+A guided performance review reflection skill for [Amplifier](https://github.com/microsoft/amplifier).
 
-This repository contains reusable Amplifier skills that can be installed and used by any team member using Amplifier.
+Mines your project history, Amplifier sessions, meeting transcripts, and voice notes, then walks you through a month-by-month "memory lane" conversation to capture the real stories behind your work. Produces paste-ready answers in your voice.
 
-## Available Skills
+The reflection is the product. The paste-ready answers are a side effect.
 
-### `connect-reflect`
+## What it does
 
-Guided Microsoft Connect performance review reflection. Mines project history, sessions, meetings, and transcripts across all evidence sources, then walks you through a month-by-month "memory lane" to capture the real stories behind the work.
+1. Parses your review form structure (currently built for Microsoft Connect, adaptable to other formats)
+2. Finds or builds a voice profile so the output sounds like you, not like AI
+3. Mines evidence from multiple sources in parallel:
+   - Git history across all your projects (authorship-verified)
+   - Amplifier session summaries
+   - Meeting transcripts
+   - Voice transcripts and notes
+   - Team tracking and org context
+4. Walks you through a month-by-month reflection conversation
+5. Synthesizes evidence and drafts answers in your voice
+6. Final walk-through for review before producing the document
 
-**Use when:**
-- It's Connect time
-- You need to fill out your performance review
-- You want to reflect on impact and accomplishments in your voice
+## Install
 
-**Key features:**
-- Mines git history (authorship-verified)
-- Extracts Amplifier session summaries
-- Scans meeting transcripts
-- Finds voice transcripts
-- Walks you through memory lane interactively
-- Produces paste-ready answers in your voice
-
-## Installation
-
-Add this to your `~/.amplifier/settings.yaml`:
+Add this line to your `~/.amplifier/settings.yaml`:
 
 ```yaml
 skills:
   dirs:
-    - git+https://github.com/anderlpz/amplifier-skills-team@main#subdirectory=skills
+    - git+https://github.com/anderlpz/amplifier-skills-connect-reflect@main#subdirectory=skills
 ```
 
-Then restart Amplifier or clear the skill cache. On your next session, the skills will be available.
+Start a new Amplifier session. The skill is available immediately.
 
-**To use a skill:** Start a new Amplifier session and type `/skill-name`, e.g. `/connect-reflect`
+## Use
 
-## Contributing New Skills
+```
+/connect-reflect
+```
 
-To add a new skill to this repo:
+Or just say "help me with my Connect", "time for my performance review", or "I need to do my review."
 
-1. Create a new directory under `skills/` with your skill name: `skills/my-skill/`
-2. Write your `SKILL.md` file following the [Amplifier SKILL.md specification](https://github.com/microsoft/amplifier)
-3. Test it locally in `~/.amplifier/skills/my-skill/` first
-4. Commit to a feature branch and open a PR
-5. Once merged, it's available to everyone on the next cache clear
+## What makes this different
 
-## License
+This skill was built from a real Connect session and encodes hard lessons:
 
-These skills are shared with the team for collaborative use.
+- **Impact is what work enabled, not what was shipped.** No commit counts. No line counts. Impact is new thinking, scaled approaches, and influence on others.
+- **Authorship is verified.** Every project is checked against git history. You don't take credit for work you didn't do.
+- **Voice matters.** The skill loads or builds a voice profile so the output sounds like the person who wrote it. AI tells (em dashes, "robust framework", "enhanced capabilities") are actively avoided.
+- **Honesty over bravado.** Where you haven't done something yet, the skill says so in plain language rather than faking expertise.
+- **The conversation IS the product.** Automated mining is just a memory trigger. The real answers come from you engaging with evidence and telling the real story.
+
+## Requirements
+
+- [Amplifier](https://github.com/microsoft/amplifier) with the skills tool configured
+- Projects in a workspace directory with git history
+- Works best with Amplifier session history available
+
+## Contributing
+
+To improve this skill, edit `skills/connect-reflect/SKILL.md` and submit a PR.

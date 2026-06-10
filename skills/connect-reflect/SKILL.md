@@ -3,7 +3,7 @@ name: connect-reflect
 description: >
   Guided Microsoft Connect performance review reflection. Mines project history,
   sessions, meetings, and transcripts across all evidence sources, then walks you
-  through a month-by-month "memory lane" to capture the real stories behind the
+  through a guided reflection to capture the real stories behind the
   work. Produces paste-ready Connect answers in your voice. Use when it's Connect
   time, "help me with my Connect", "time for my performance review", "Connect is
   due", or "I need to do my review."
@@ -175,7 +175,7 @@ This is the most important step. Present the evidence as a timeline
 and have a CONVERSATION about each period. The mining was just the
 setup. This is where the Connect actually gets written.
 
-For each month or phase:
+For each period (adapt to how the work naturally clusters: by project, by theme, by quarter, by phase, whatever fits):
 1. Show what the evidence says happened: "In October, I see you were
    deep in [project]. There were sessions about [topic], a meeting
    with [person], and you were building [feature]."

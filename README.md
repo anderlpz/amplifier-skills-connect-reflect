@@ -16,6 +16,16 @@ This skill fixes that by doing two things:
 
 The paste-ready review answers are a side effect of genuinely reflecting. That's the point.
 
+## Important: this does not write your review for you
+
+This skill does not automate your performance review. It can't, and it shouldn't. Your career story is yours to tell.
+
+What it does is gather the evidence you've already generated (commits, sessions, meetings, transcripts, planning docs) and put it in front of you so you can remember what actually happened. Then it has a conversation with you about what that work meant, what was hard, what you're proud of, and what you learned. It captures your words, your framing, your voice.
+
+The draft it produces at the end is built from what YOU said during the reflection, matched to how YOU write. If something doesn't sound right, you change it. The skill adapts.
+
+Think of it less like "AI writes my review" and more like "AI helps me remember what I did, then I tell the story."
+
 ## How it works
 
 1. **Understand the form** — Parses your review structure (built for Microsoft Connect, adaptable to other formats)
@@ -62,10 +72,6 @@ This skill was built from a real review session and encodes hard lessons:
 
 The skill is built with the Microsoft Connect review structure in mind and checks for org-published guidance (Security Activation Examples, D&I frameworks, SFI alignment, etc.) to make sure your language fits what Microsoft expects to see. It handles the full Connect form: core priorities, impact narrative, D&I, Security, challenge/setback, future priorities, growth opportunities, and conversation starters.
 
-## Contributing
-
-To improve this skill, edit `skills/connect-reflect/SKILL.md` and submit a PR.
-
 ## Multi-machine support
 
 Many people work across multiple machines. This skill handles that:
@@ -73,4 +79,8 @@ Many people work across multiple machines. This skill handles that:
 - **Git history** is mined via GitHub API (`gh` CLI), not local clones. Works from any machine without needing your repos checked out locally.
 - **Amplifier sessions** are mined if they exist on this machine. If you work across multiple machines and sessions are elsewhere, the guided reflection step covers the gap. You know what you worked on.
 - **Meeting transcripts** can come from local files or M365 APIs.
-- **The guided reflection is the safety net.** Even if all your evidence is on other machines, the conversation in Step 4 captures what the mining missed. That's by design.
+- **The guided reflection is the safety net.** Even if all your evidence is on other machines, the conversation captures what the mining missed. That's by design.
+
+## Contributing
+
+To improve this skill, edit `skills/connect-reflect/SKILL.md` and submit a PR.
